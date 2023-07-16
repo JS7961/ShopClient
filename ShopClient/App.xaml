@@ -1,0 +1,23 @@
+﻿<Application x:Class="ShopClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ShopClient"
+             xmlns:ViewModel="clr-namespace:ShopClient.ViewModel"
+             xmlns:View="clr-namespace:ShopClient.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+            <View:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:ProduktViewModel}">
+            <View:ProduktView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:WarenkorbViewModel}">
+            <View:WarenkorbView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:KasseViewModel}">
+            <View:KasseView/>
+        </DataTemplate>
+
+    </Application.Resources>
+</Application>

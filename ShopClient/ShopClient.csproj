@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>bin\Debug\net6.0-windows\c3.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0-windows\c3.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SuperSimpleTcp" Version="3.0.10" />
+  </ItemGroup>
+
+</Project>

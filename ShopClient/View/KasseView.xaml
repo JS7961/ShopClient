@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="ShopClient.View.KasseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShopClient.View"
+             xmlns:ViewModel="clr-namespace:ShopClient.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <ViewModel:KasseViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="500" Height="*"/>
+            <RowDefinition MaxHeight="150" Height="*"/>
+            <RowDefinition MaxHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+           
+        </Grid.ColumnDefinitions>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Kasse" HorizontalAlignment="Center" FontSize="20" Grid.ColumnSpan="5"/>
+
+        <TextBlock Text="Vorname" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+        <TextBlock Text="Nachname" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding KasseModel1.Vorname}" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding KasseModel1.Nachname}" VerticalContentAlignment="Center"/>
+
+
+
+        <TextBlock Text="Straße und Hausnummer" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+        <TextBlock Text="PLZ" Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding KasseModel1.Straße}" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding KasseModel1.Plz}" VerticalContentAlignment="Center"/>
+
+
+
+        <TextBlock Text="Ort" Grid.Row="5" Grid.Column="1"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom" />
+        <TextBlock Text="Land" Grid.Row="5" Grid.Column="3"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding KasseModel1.Ort}" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding KasseModel1.Land}" VerticalContentAlignment="Center"/>
+
+
+
+
+        <TextBlock Text="Telefon" Grid.Row="7" Grid.Column="1"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+        <TextBlock Text="Email" Grid.Row="7" Grid.Column="3"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Bottom"/>
+
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding KasseModel1.Telefon}" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding KasseModel1.Email, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center"/>
+               
+    </Grid>
+
+    <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="Zahlungsart" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="20"/>
+
+            <Border Grid.Row="1" Grid.Column="0" Padding="10" BorderThickness="1" BorderBrush="Gray"  Margin="10 10 10 10" CornerRadius="4" Background="BlanchedAlmond"/>
+            <RadioButton IsChecked="{Binding Vorkasse}" Grid.Row="1" Grid.Column="0" Content = "Vorkasse"  GroupName = "Zahlart"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+
+            <Border Grid.Row="1" Grid.Column="1" Padding="10" BorderThickness="1" BorderBrush="Gray"  Margin="10 10 10 10" CornerRadius="4" Background="BlanchedAlmond"/>
+            <RadioButton IsChecked="{Binding Paypal}" Grid.Row="1" Grid.Column="1" Content = "Paypal"  GroupName = "Zahlart"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+            <TextBlock Text="{Binding T1}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20"/>
+
+        </Grid>
+
+
+
+
+        <Button Grid.Row="2" Width="220" Height="40" Content="Bestellung Abschicken" Command="{Binding BestellungAbsendenCommand}"/>
+
+
+
+
+
+
+    </Grid>
+
+</UserControl>
